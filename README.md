@@ -46,20 +46,20 @@ The game follows an escalating challenge loop. You can save or load your progres
 
 ```mermaid
 graph LR
-    A[Choose Difficulty<br>Easy/Normal/Hard] --> B[Select Hero<br>3 Unique Classes]
+    A[Choose Difficulty] --> B[Select Hero]
     B --> C((Battle Random Boss))
-    C --> D[Turn-Based Battle<br>Play cards using energy]
+    C --> D[Turn-Based Battle]
     
     D -->|Round continues| C
     D -->|Hero HP ≤ 0| E[Game Over]
     D -->|Round Count > 12| E
-    D -->|Defeat Boss| F[Get Permanent Buffs<br>Faster victory = more choices]
+    D -->|Defeat Boss| F[Get Buffs]
     
     F -->|Next Boss| C
     
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    classDef boss fill:#ffcccc,stroke:#cc0000,stroke-width:2px;
-    classDef death fill:#ffebee,stroke:#c62828,stroke-width:2px;
+    classDef default fill:#8882,stroke:#888,stroke-width:2px;
+    classDef boss fill:#f663,stroke:#f66,stroke-width:2px;
+    classDef death fill:#f223,stroke:#f44,stroke-width:2px;
     
     class C boss;
     class E death;
@@ -230,11 +230,14 @@ graph LR
     B --> D[Acquired Buffs]
     B --> E[Boss Sequence & Index]
     B --> F[Random Seed]
-    
-    classDef file fill:#e0f7fa,stroke:#006064,stroke-width:2px;
-    classDef data fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    B --> G[Current Turn Count]
+
+
+    classDef file fill:#00bcd433,stroke:#00bcd4,stroke-width:2px,color:#80deea;
+    classDef data fill:#ffffff11,stroke:#888888,stroke-width:1px;
+
     class B file;
-    class C,D,E,F data;
+    class C,D,E,F,G data;
 ```
 
 ------

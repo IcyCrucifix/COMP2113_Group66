@@ -45,6 +45,7 @@ make clean
 The game follows an escalating challenge loop. You can save or load your progress at any time.
 
 ```mermaid
+%%{init: {'theme': 'neutral'}}%%
 graph LR
     A[Choose Difficulty] --> B[Select Hero]
     B --> C((Battle Random Boss))
@@ -56,10 +57,10 @@ graph LR
     D -->|Defeat Boss| F[Get Buffs]
     
     F -->|Next Boss| C
-    
-    classDef default fill:#8882,stroke:#888,stroke-width:2px;
-    classDef boss fill:#f663,stroke:#f66,stroke-width:2px;
-    classDef death fill:#f223,stroke:#f44,stroke-width:2px;
+
+    classDef default fill:none,stroke:#888,stroke-width:2px,color:inherit;
+    classDef boss fill:#ff000010,stroke:#e53935,stroke-width:2px,color:inherit;
+    classDef death fill:#b71c1c20,stroke:#b71c1c,stroke-width:2px,color:inherit;
     
     class C boss;
     class E death;
@@ -224,17 +225,17 @@ The save file securely stores the following information:
 * **RNG State**: The random seed, ensuring run consistency and preventing save-scumming of randomized events.
 
 ```mermaid
+%%{init: {'theme': 'neutral'}}%%
 graph LR
-    A[Current Game State] -->|Saves to| B[(Save File<br>Current Directory)]
+    A[Current Game State] -->|Saves to| B[(Save File)]
     B --> C[Hero ID & HP]
     B --> D[Acquired Buffs]
     B --> E[Boss Sequence & Index]
     B --> F[Random Seed]
     B --> G[Current Turn Count]
 
-
-    classDef file fill:#00bcd433,stroke:#00bcd4,stroke-width:2px,color:#80deea;
-    classDef data fill:#ffffff11,stroke:#888888,stroke-width:1px;
+    classDef file fill:#00acc115,stroke:#00acc1,stroke-width:2px,color:inherit;
+    classDef data fill:none,stroke:#9e9e9e,stroke-width:1px,color:inherit;
 
     class B file;
     class C,D,E,F,G data;

@@ -232,13 +232,12 @@ graph LR
     B --> D[Acquired Buffs]
     B --> E[Boss Sequence & Index]
     B --> F[Random Seed]
-    B --> G[Current Turn Count]
 
     classDef file fill:#e0f7fa,stroke:#006064,color:#000000,stroke-width:2px;
     classDef data fill:#ffffff,stroke:#757575,color:#000000,stroke-width:1px;
 
     class B file;
-    class C,D,E,F,G data;
+    class C,D,E,F data;
 ```
 
 ------

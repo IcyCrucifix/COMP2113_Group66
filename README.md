@@ -180,7 +180,7 @@ During the battle, various status effects can be inflicted on both the player an
 - **Energy Saving**: Reduces all card energy costs.
   - **Sample Card**: Green Ecology
 
-### 5.4 Boss System
+### Boss System
 
 | Boss Type |               &emsp;&emsp;Names&emsp;&emsp;               | HP Range | Core Behavior Logic                                          | Special Mechanics                                            |
 | :-------: | :-------------------------------------------------------: | :------: | ------------------------------------------------------------ | ------------------------------------------------------------ |

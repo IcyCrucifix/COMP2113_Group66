@@ -109,7 +109,7 @@ Here is how our project implements the required coding elements to support the c
 - **Supported Features:** Loading static game data (Cards, Heroes, Bosses) from text files and implementing a robust Save/Load system for campaign progress.
 - **Implementation:** Uses `<fstream>` (`std::ifstream`, `std::ofstream`) to parse `cards.txt`, `heroes.txt`, and `bosses.txt` dynamically at launch, and to write/read `savegame.txt` when users save or load their progress.
 
-### Program Codes in Multiple Files
+### 5. Program Codes in Multiple Files
 
 - **Supported Features:** Organizing the large codebase into modular subsystems for maintainability.
 
@@ -127,9 +127,20 @@ Here is how our project implements the required coding elements to support the c
   └── Makefile                # Build automation
   ```
 
-### Multiple Difficulty Levels
+### 6. Multiple Difficulty Levels
 
 - **Supported Features:** Easy, Normal, and Hard difficulties altering the gameplay mechanics.
+    - **Easy**: the selected boss’s rolled HP is reduced to 88% of its normal value, the hero’s card effects are scaled up by 12%, and boss move values are scaled down to 88%, so attacks, healing, and status effects are all more favorable to the player.
+    - **Normal**: no extra scaling is applied and all values stay at their base settings.
+    - **Hard**:
+        - **Basic hard scale**:
+            - boss HP 1.08x
+            - hero card values 0.92x
+        - **Random hard scale**: every 3 rounds, the boss gains one random one-round Hard-only modifier before acting.Only one of these triggers in that round:
+            - Ferocity: the boss’s move gains +18 extra damage;
+            - Guard Break: if the boss’s move deals damage, it also applies +2 **Vulnerability**;
+            - Scorch Pulse: after the boss acts, the player gains +2 **Burn**;
+            - Toxic Pulse: after the boss acts, the player gains +2 **Poison**.
 - **Implementation:** Applied via a global en56um in `main.cpp` that modifies boss HP scaling, attack power, boss intent visibility (UI), and triggers multi-phase mechanics on Hard.
 
 ------

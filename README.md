@@ -49,14 +49,20 @@ graph LR
     A[Choose Difficulty<br>Easy/Normal/Hard] --> B[Select Hero<br>3 Unique Classes]
     B --> C((Battle Random Boss))
     C --> D[Turn-Based Battle<br>Play cards using energy]
+    
     D -->|Round continues| C
     D -->|Hero HP ≤ 0| E[Game Over]
+    D -->|Round Count > 12| E
     D -->|Defeat Boss| F[Get Permanent Buffs<br>Faster victory = more choices]
+    
     F -->|Next Boss| C
     
     classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
     classDef boss fill:#ffcccc,stroke:#cc0000,stroke-width:2px;
+    classDef death fill:#ffebee,stroke:#c62828,stroke-width:2px;
+    
     class C boss;
+    class E death;
 ```
 ### Game Rules
 

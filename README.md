@@ -225,6 +225,22 @@ During the battle, various status effects can be inflicted on both the player an
 |   Magic   | Chaos Witch; <br>Queen of the Full Moon; <br>Death Priest | 260-380  | Applies Burn, Poison, Vulnerability instead of direct damage | Heals if player has debuffs; <br>stronger debuffs below 30% HP |
 |  Hybrid   |              Unknown; <br>Sir of All-knowing              | 300-440  | Adapts to player actions dynamically                         | Phase change below 40% HP; reduces player draw               |
 
+### Hero-Boss Restrained Relationship
+
+To add depth and replayability, each hero has clear advantages and disadvantages against different boss types. This creates a rock-paper-scissors style strategy where choosing the right hero can significantly change the battle outcome.
+
+| Hero                          | vs Attack Boss | vs Defense Boss | vs Magic Boss | vs Hybrid Boss |
+|:-------------------------------:|:----------------:|:-----------------:|:---------------:|:----------------:|
+| Shadowblade Strider | Neutral ×1.0  | Disadvantage ×0.75 | Advantage ×1.25 | Neutral ×1.0   |
+| Bulwark Knight  | Advantage ×1.25 | Neutral ×1.0   | Disadvantage ×0.75 | Neutral ×1.0   |
+| Wraithflame Sprite     | Disadvantage ×0.75 | Advantage ×1.25 | Neutral ×1.0  | Advantage ×1.25 |
+
+**Matchup Rules**  
+- **Advantage**: All damage dealt by the player is multiplied by **1.25** (+25%).  
+- **Disadvantage**: All damage dealt by the player is multiplied by **0.75** (-25%).  
+- **Neutral**: No multiplier (×1.0).  
+
+This system is calculated automatically in every battle and affects all cards, reflections, and status effects.
 
 ### Save / Load System
 

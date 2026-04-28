@@ -40,13 +40,6 @@ enum class BossArchetype
     Hybrid
 };
 
-enum class BasicAction
-{
-    Attack = 1,
-    Defend = 2,
-    Status = 3
-};
-
 struct StatusBlock
 {
     int burn = 0;
@@ -112,12 +105,6 @@ std::string heroClassName(HeroClass heroClass);
  * Outputs: English label for the archetype.
  */
 std::string bossArchetypeName(BossArchetype archetype);
-
-/* What it does: Converts a basic action enum to a user-facing name.
- * Inputs: action - action enum value.
- * Outputs: English label for the action.
- */
-std::string basicActionName(BasicAction action);
 
 /* What it does: Lists all active statuses in printable tag form.
  * Inputs: statuses - status bundle to inspect.

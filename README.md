@@ -80,9 +80,9 @@ Each round against a boss strictly follows these 5 phases:
 #### Key Mechanics
 
 - **Deck Cycle**: Auto-cycles from Draw Pile → Hand → Discard Pile.
-- **Turn Limit**: Must defeat each boss within **12 rounds**, otherwise the run fails.
-- **Victory Condition**: **Boss HP ≤ 0** triggers Game Victory.
-- **Defeat Condition**: **Hero HP ≤ 0** triggers Game Over.
+- **Turn Limit**: Must defeat each boss within **`12` rounds**, otherwise the run fails.
+- **Victory Condition**: **Boss HP ≤ `0`** triggers Game Victory.
+- **Defeat Condition**: **Hero HP ≤ `0`** triggers Game Over.
 - **Reward System**: Faster victories = **more permanent buff choices**.
 
 ----
@@ -132,17 +132,17 @@ Here is how our project implements the required coding elements to support the c
 ### 6. Multiple Difficulty Levels
 
 - **Supported Features:** Easy, Normal, and Hard difficulties altering the gameplay mechanics.
-    - **Easy**: the selected boss’s rolled HP and boss move are reduced to 75% of its normal value, the hero’s card effects are scaled up by 12%, so attacks, healing, and status effects are all more favorable to the player.
+    - **Easy**: the selected boss’s rolled HP and boss move are reduced to `75%` of its normal value, the hero’s card effects are scaled up by `12%`, so attacks, healing, and status effects are all more favorable to the player.
     - **Normal**: no extra scaling is applied and all values stay at their base settings.
     - **Hard**:
         - **Basic hard scale**:
-            - boss HP 1.20x
-            - hero card values 0.92x
-        - **Random hard scale**: every 3 rounds, the boss gains one random one-round Hard-only modifier before acting.Only one of these triggers in that round:
+            - boss HP `1.20x`
+            - hero card values `0.92x`
+        - **Random hard scale**: every 3 rounds, the boss gains one random one-round Hard-only modifier before acting. Only one of these triggers in that round:
             - Ferocity: the boss’s move gains +18 extra damage;
-            - Guard Break: if the boss’s move deals damage, it also applies +2 **Vulnerability**;
-            - Scorch Pulse: after the boss acts, the player gains +2 **Burn**;
-            - Toxic Pulse: after the boss acts, the player gains +2 **Poison**.
+            - Guard Break: if the boss’s move deals damage, it also applies `+2` **Vulnerability**;
+            - Scorch Pulse: after the boss acts, the player gains `+2` **Burn**;
+            - Toxic Pulse: after the boss acts, the player gains `+2` **Poison**.
 - **Implementation:** Applied via a global en56um in `main.cpp` that modifies boss HP scaling, attack power, boss intent visibility (UI), and triggers multi-phase mechanics on Hard.
 - **Supported Features:** Roguelike Buff System.
     - If the player decides to play multiple rounds, the player chooses **one permanent buff** from a random reward selection after each boss victory. These buffs are run-persistent upgrades and are the main roguelike progression layer.
@@ -175,9 +175,9 @@ Users can choose their hero before each encounter. There are 3 heroes to choose 
 
 |      Hero Name      | Class Type |  HP  | Energy | Passives                                                     | Suggested Playing Style |
 | :-----------------: | :--------: | :--: | :----: | ------------------------------------------------------------ | ----------------------- |
-| Shadowblade Strider | Offensive  | 200  |   5    | Gain Power if damage ≥220; <br>Vulnerability stacks +1; <br>+3% damage if enemy <30% HP | High-risk burst damage  |
-|   Bulwark Knight    | Defensive  | 280  |   3    | Gain Block + shield each turn; <br>Defense cost -1; <br>Reflect 10% damage | Defensive counterattack |
-| Wraithflame Sprite  |   Magic    | 220  |   4    | Burn/Poison boosted; <br>Magic damage +15%; <br>Draw +1 if 2 debuffs active | Damage-over-time        |
+| Shadowblade Strider | Offensive  | `200`  |   `5`    | Gain Power if damage ≥`220`; <br>Vulnerability stacks `+1`; <br>`+3%` damage if enemy <30% HP | High-risk burst damage  |
+|   Bulwark Knight    | Defensive  | `280`  |   `3`    | Gain Block + shield each turn; <br>Defense cost `-1`; <br>Reflect `10%` damage | Defensive counterattack |
+| Wraithflame Sprite  |   Magic    | `220`  |   `4`    | Burn/Poison boosted; <br>Magic damage +15%; <br>Draw `+1` if 2 debuffs active | Damage-over-time        |
 
 ### Card System 
 
@@ -191,8 +191,8 @@ There are 23 kinds of cards in total, categorized into 4 types. Different types 
 - **Defense**
   - There are 5 kinds of **Defense Card** in total. Effects include damage reduction, apply **Block** and conditional counterattacks. 
   - **Sample Card**
-    - **Iron Shield**: Reduce physical damage taken by 80%, gain 2 **Block**.
-    - **Thorn Armor**: Reduce damage taken by 50%, if the enemy uses an **Attack Card**, the enemy takes double the damage you receive.
+    - **Iron Shield**: Reduce physical damage taken by `80%`, gain `2` **Block**.
+    - **Thorn Armor**: Reduce damage taken by `50%`, if the enemy uses an **Attack Card**, the enemy takes double the damage you receive.
 - **Status**
   - There are 8 kinds of **Status Cards** in total. They apply 7 different statuses, which are explained in the Status Effects section below.
 - **Other**
@@ -202,15 +202,15 @@ There are 23 kinds of cards in total, categorized into 4 types. Different types 
 
 During the battle, various status effects can be inflicted on both the player and the boss. These buffs and debuffs dynamically change combat performance, including attack power, defense capability and continuous damage. 7 statuses can be listed as follows:
 
-- **Burn**: Each stack increases magic damage taken by 7%.
+- **Burn**: Each stack increases magic damage taken by `7%`.
   - **Sample Card**: Flame Blast
-- **Vulnerability**: Each stack increases physical damage taken by 5%.
+- **Vulnerability**: Each stack increases physical damage taken by `5%`.
   - **Sample Card**: Frailty Strike
-- **Power**: Each stack increases damage dealt by 20%.
+- **Power**: Each stack increases damage dealt by `20%`.
   - **Sample Card**: Power Blasting
-- **Block**: Each stack reduces lethal damage taken by 20%.
+- **Block**: Each stack reduces lethal damage taken by `20%`.
   - **Sample Card**: Iron Shield, Revenge Strike
-- **Poison**: At end of turn, deal 12 damage per stack.
+- **Poison**: At end of turn, deal `12` damage per stack.
   - **Sample Card**: Toxic Storm
 - **Shield**: Absorbs incoming damage.
   - **Sample**: Defense
@@ -221,10 +221,10 @@ During the battle, various status effects can be inflicted on both the player an
 
 | Boss Type |               &emsp;&emsp;Names&emsp;&emsp;               | HP Range | Core Behavior Logic                                          | Special Mechanics                                            |
 | :-------: | :-------------------------------------------------------: | :------: | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Offensive |    Dark Demon;<br>Lord of Blood;<br>Starscourge Radahn    | 280-400  | High physical damage attacks with varying probabilities      | +30% damage and more frequent strong attacks if below 30% HP |
-| Defensive |     Sanctuary Guardian;<br>Void Giant;<br>Abyss Beast     | 380-520  | Damage reduction, reflection, counterattacks                 | Heals every 3 turns; <br>stronger reflect below 30% HP       |
-|   Magic   | Chaos Witch; <br>Queen of the Full Moon; <br>Death Priest | 260-380  | Applies Burn, Poison, Vulnerability instead of direct damage | Heals if player has debuffs; <br>stronger debuffs below 30% HP |
-|  Hybrid   |              Unknown; <br>Sir of All-knowing              | 300-440  | Adapts to player actions dynamically                         | Phase change below 40% HP; reduces player draw               |
+| Offensive |    Dark Demon;<br>Lord of Blood;<br>Starscourge Radahn    | `280-400`  | High physical damage attacks with varying probabilities      | `+30%` damage and more frequent strong attacks if below `30%` HP |
+| Defensive |     Sanctuary Guardian;<br>Void Giant;<br>Abyss Beast     | `380-520`  | Damage reduction, reflection, counterattacks                 | Heals every 3 turns; <br>stronger reflect below `30%` HP       |
+|   Magic   | Chaos Witch; <br>Queen of the Full Moon; <br>Death Priest | `260-380`  | Applies Burn, Poison, Vulnerability instead of direct damage | Heals if player has debuffs; <br>stronger debuffs below `30%` HP |
+|  Hybrid   |              Unknown; <br>Sir of All-knowing              | `300-440`  | Adapts to player actions dynamically                         | Phase change below `40%` HP; reduces player draw               |
 
 ### Hero-Boss Restrained Relationship
 
@@ -232,14 +232,14 @@ To add depth and replayability, each hero has clear advantages and disadvantages
 
 | Hero                          | vs Attack Boss | vs Defense Boss | vs Magic Boss | vs Hybrid Boss |
 |:-------------------------------:|:----------------:|:-----------------:|:---------------:|:----------------:|
-| Shadowblade Strider | Neutral ×1.0  | Disadvantage ×0.75 | Advantage ×1.25 | Neutral ×1.0   |
-| Bulwark Knight  | Advantage ×1.25 | Neutral ×1.0   | Disadvantage ×0.75 | Neutral ×1.0   |
-| Wraithflame Sprite     | Disadvantage ×0.75 | Advantage ×1.25 | Neutral ×1.0  | Advantage ×1.25 |
+| Shadowblade Strider | Neutral `×1.0`  | Disadvantage `×0.75` | Advantage `×1.25` | Neutral `×1.0`   |
+| Bulwark Knight  | Advantage `×1.25` | Neutral `×1.0`   | Disadvantage `×0.75` | Neutral `×1.0`   |
+| Wraithflame Sprite     | Disadvantage `×0.75` | Advantage `×1.25` | Neutral `×1.0`  | Advantage `×1.25` |
 
 **Matchup Rules**  
-- **Advantage**: All damage dealt by the player is multiplied by **1.25**(+25%).  
-- **Disadvantage**: All damage dealt by the player is multiplied by **0.75**(-25%).  
-- **Neutral**: No multiplier (×1.00).  
+- **Advantage**: All damage dealt by the player is multiplied by `**1.25**(+25%)`.  
+- **Disadvantage**: All damage dealt by the player is multiplied by `**0.75**(-25%)`.  
+- **Neutral**: No multiplier (`×1.00`).  
 
 This system is calculated automatically in every battle and affects all cards, reflections, and status effects.
 

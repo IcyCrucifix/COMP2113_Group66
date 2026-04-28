@@ -131,11 +131,11 @@ Here is how our project implements the required coding elements to support the c
 ### 6. Multiple Difficulty Levels
 
 - **Supported Features:** Easy, Normal, and Hard difficulties altering the gameplay mechanics.
-    - **Easy**: the selected boss’s rolled HP is reduced to 88% of its normal value, the hero’s card effects are scaled up by 12%, and boss move values are scaled down to 88%, so attacks, healing, and status effects are all more favorable to the player.
+    - **Easy**: the selected boss’s rolled HP and boss move are reduced to 75% of its normal value, the hero’s card effects are scaled up by 12%, so attacks, healing, and status effects are all more favorable to the player.
     - **Normal**: no extra scaling is applied and all values stay at their base settings.
     - **Hard**:
         - **Basic hard scale**:
-            - boss HP 1.08x
+            - boss HP 1.20x
             - hero card values 0.92x
         - **Random hard scale**: every 3 rounds, the boss gains one random one-round Hard-only modifier before acting.Only one of these triggers in that round:
             - Ferocity: the boss’s move gains +18 extra damage;

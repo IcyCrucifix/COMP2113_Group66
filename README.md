@@ -17,7 +17,7 @@ You should have a C++ compiler (`clang++` or `g++`) installed on your device. Th
 1. **Clone the repository**
 
    ```bash
-   git clone [https://github.com/IcyCrucifix/COMP2113_Group66.git](https://github.com/IcyCrucifix/COMP2113_Group66.git)
+   git clone https://github.com/IcyCrucifix/COMP2113_Group66.git
    cd COMP2113_Group66
    ```
 

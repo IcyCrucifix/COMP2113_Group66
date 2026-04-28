@@ -10,32 +10,34 @@ Players are able to choose whether they play single or multiple rounds. After ea
 
 ---
 
-## How to Build and Run
+## How to run
 
-### 1. Prerequisites
-This project uses **only standard C++17 libraries (STL)**. No external installations or non-standard libraries are required for Linux/macOS/WSL.
+You should have a C++ compiler (`clang++` or `g++`) installed on your device. The program is built using standard C++17 libraries (STL). No external installations or non-standard libraries are required for Linux/macOS/WSL.
 
-### 2. Compilation
-Run the following command in the project root directory (ensure you have `clang++` or `g++` installed as specified in the `Makefile`):
+1. **Clone the repository**
 
-```bash
-make all
-```
+   ```bash
+   git clone [https://github.com/IcyCrucifix/COMP2113_Group66.git](https://github.com/IcyCrucifix/COMP2113_Group66.git)
+   cd COMP2113_Group66
+   ```
 
-### 3. Execution
+2. **Compile the project**
+  
+   ```bash
+   make all
+   ```
 
-After successful compilation, start the game by running:
+3. **Start the program**
 
-```bash
-./slay_text
-```
+   ```bash
+   ./slay_text
+   ```
 
-### 4. Clean Build Files
+4. **Clean build files** (optional)
 
-```bash
-make clean
-```
-
+   ```bash
+   make clean
+   ```
 ------
 
 ## Gameplay Basics

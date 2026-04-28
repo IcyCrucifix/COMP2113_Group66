@@ -139,7 +139,6 @@ bool saveGameToFile(const std::string &path, const SaveGameData &saveGame)
     file << "current_boss_rounds_started=" << saveGame.currentBossRoundsStarted << '\n';
     file << "current_round=" << saveGame.currentRound << '\n';
     file << "energy=" << saveGame.energy << '\n';
-    file << "action_points=" << saveGame.actionPoints << '\n';
     file << "current_battle_pressure=" << saveGame.currentBattlePressure << '\n';
     file << "planned_move_name=" << saveGame.plannedMoveName << '\n';
     file << "planned_move_category=" << saveGame.plannedMoveCategory << '\n';
@@ -253,10 +252,6 @@ bool loadGameFromFile(const std::string &path, SaveGameData &saveGame)
         else if (key == "energy")
         {
             saveGame.energy = std::stoi(value);
-        }
-        else if (key == "action_points")
-        {
-            saveGame.actionPoints = std::stoi(value);
         }
         else if (key == "current_battle_pressure")
         {

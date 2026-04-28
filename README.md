@@ -54,7 +54,7 @@ graph LR
     D -->|Round continues| C
     D -->|Hero HP ≤ 0| E[Game Over]
     D -->|Round Count > 12| E
-    D -->|Defeat Boss| F[Get Buffs]
+    D -->|Boss HP ≤ 0| F[Get Buffs]
     
     F -->|Next Boss| C
     

@@ -236,9 +236,9 @@ To add depth and replayability, each hero has clear advantages and disadvantages
 | Wraithflame Sprite     | Disadvantage ×0.75 | Advantage ×1.25 | Neutral ×1.0  | Advantage ×1.25 |
 
 **Matchup Rules**  
-- **Advantage**: All damage dealt by the player is multiplied by **1.25** (+25%).  
-- **Disadvantage**: All damage dealt by the player is multiplied by **0.75** (-25%).  
-- **Neutral**: No multiplier (×1.0).  
+- **Advantage**: All damage dealt by the player is multiplied by **1.25**(+25%).  
+- **Disadvantage**: All damage dealt by the player is multiplied by **0.75**(-25%).  
+- **Neutral**: No multiplier (×1.00).  
 
 This system is calculated automatically in every battle and affects all cards, reflections, and status effects.
 

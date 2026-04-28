@@ -6,7 +6,7 @@
 ## Game Description
 **Slay Text** is a single-player, roguelike deck-building card game that runs entirely in the terminal. Players select one of three unique heroes, each with distinct passives and combat styles, and battle through a randomized sequence of bosses. Using energy as a core resource, players cast attack, defense, status, and utility cards to defeat enemies while managing buffs, debuffs, and a cycling deck system. 
 
-After each boss victory, players earn permanent buffs to strengthen their subsequent encounters. The game includes three difficulty levels and a complete **Save/Load system** that preserves hero health, upgrades, and campaign progress. Victory requires defeating all bosses in sequence; defeat occurs if hero health drops to 0.
+Players are able to choose whether they play single or multiple rounds. After each boss victory, players earn permanent buffs to strengthen their subsequent encounters. The game includes three difficulty levels and a complete **Save/Load system** that preserves hero health, upgrades, and campaign progress. Victory requires defeating all bosses in sequence; defeat occurs if hero health drops to 0.
 
 ---
 
@@ -143,6 +143,26 @@ Here is how our project implements the required coding elements to support the c
             - Scorch Pulse: after the boss acts, the player gains +2 **Burn**;
             - Toxic Pulse: after the boss acts, the player gains +2 **Poison**.
 - **Implementation:** Applied via a global en56um in `main.cpp` that modifies boss HP scaling, attack power, boss intent visibility (UI), and triggers multi-phase mechanics on Hard.
+- **Supported Features:** Roguelike Buff System.
+    - If the player decides to play multiple rounds, the player chooses **one permanent buff** from a random reward selection after each boss victory. These buffs are run-persistent upgrades and are the main roguelike progression layer.
+    - **Permanent buff list**
+        - **Mighty Strikes**: `+20%` to all damage dealt.
+        - **Iron Will**: `+15` maximum HP.
+        - **Energy Surge**: `+1` Energy cap every round.
+        - **Swift Step**: `+5` Speed.
+        - **Scholar Mind**: Draw `1` extra card each round.
+        - **Ember Mastery**:All Burn applications gain `+2` stacks.
+        - **Toxic Mastery**: All Poison applications gain `+2` stacks.
+        - **Vital Echo**: `+20%` to healing effects.
+        - **Barrier Core**:Gain `+8 Shield` each round and start battles with `1 Block`.
+    - **How permanent buffs are earned**
+        <br>Reward count depends on battle performance:
+        - `<= 5` rounds: `5` choices
+        - `<= 7` rounds: `4` choices
+        - `<= 10` rounds: `3` choices
+        - otherwise: `2` choices
+      <br>This means faster victories give better reward selection quality, reinforcing the roguelike snowball loop.
+- **Implementation**: Permanent buffs are represented by the `PermanentBuff` struct in `slay_text/buff.h`, containing fields such as `damagePercent`, `maxHpBonus`, `startingBlock`,etc.The permanent buff catalog is built in `buildPermanentBuffCatalog()` in `slay_text/buff.cpp`.
 
 ------
 

@@ -139,7 +139,7 @@ Here is how our project implements the required coding elements to support the c
             - boss HP `1.20x`
             - hero card values `0.92x`
         - **Random hard scale**: every 3 rounds, the boss gains one random one-round Hard-only modifier before acting. Only one of these triggers in that round:
-            - Ferocity: the boss’s move gains +18 extra damage;
+            - Ferocity: the boss’s move gains `+18` extra damage;
             - Guard Break: if the boss’s move deals damage, it also applies `+2` **Vulnerability**;
             - Scorch Pulse: after the boss acts, the player gains `+2` **Burn**;
             - Toxic Pulse: after the boss acts, the player gains `+2` **Poison**.
@@ -175,9 +175,9 @@ Users can choose their hero before each encounter. There are 3 heroes to choose 
 
 |      Hero Name      | Class Type |  HP  | Energy | Passives                                                     | Suggested Playing Style |
 | :-----------------: | :--------: | :--: | :----: | ------------------------------------------------------------ | ----------------------- |
-| Shadowblade Strider | Offensive  | `200`  |   `5`    | Gain Power if damage ≥`220`; <br>Vulnerability stacks `+1`; <br>`+3%` damage if enemy <30% HP | High-risk burst damage  |
+| Shadowblade Strider | Offensive  | `200`  |   `5`    | Gain Power if damage ≥`220`; <br>Vulnerability stacks `+1`; <br>`+3%` damage if enemy <`30%` HP | High-risk burst damage  |
 |   Bulwark Knight    | Defensive  | `280`  |   `3`    | Gain Block + shield each turn; <br>Defense cost `-1`; <br>Reflect `10%` damage | Defensive counterattack |
-| Wraithflame Sprite  |   Magic    | `220`  |   `4`    | Burn/Poison boosted; <br>Magic damage +15%; <br>Draw `+1` if 2 debuffs active | Damage-over-time        |
+| Wraithflame Sprite  |   Magic    | `220`  |   `4`    | Burn/Poison boosted; <br>Magic damage `+15%`; <br>Draw `+1` if 2 debuffs active | Damage-over-time        |
 
 ### Card System 
 
@@ -186,8 +186,8 @@ There are 23 kinds of cards in total, categorized into 4 types. Different types 
 - **Attack**
   - There are 8 kinds of **Attack Card** in total. Effects include deal damage, apply **Vulnerability** or **Burn**, burst damage, self-recoil effects.
   - **Sample Card**:
-    - **Heavy Strike**: Deal 70 physical damage.
-    - **Magic Blast**: Deal 80 magic damage.
+    - **Heavy Strike**: Deal `70` physical damage.
+    - **Magic Blast**: Deal `80` magic damage.
 - **Defense**
   - There are 5 kinds of **Defense Card** in total. Effects include damage reduction, apply **Block** and conditional counterattacks. 
   - **Sample Card**

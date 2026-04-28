@@ -175,6 +175,18 @@ bool fileExists(const std::string &path)
     return std::filesystem::exists(path);
 }
 
+std::string resolveFirstExistingPath(const std::vector<std::string> &candidates)
+{
+    for (const std::string &candidate : candidates)
+    {
+        if (fileExists(candidate))
+        {
+            return candidate;
+        }
+    }
+    return candidates.empty() ? std::string() : candidates.front();
+}
+
 HeroClass parseHeroClass(const std::string &text)
 {
     if (text == "Offensive")

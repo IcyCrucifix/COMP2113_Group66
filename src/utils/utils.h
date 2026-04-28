@@ -104,6 +104,12 @@ std::string bar(int current, int maximum, int width, const std::string &fillColo
  */
 bool fileExists(const std::string &path);
 
+/* What it does: Returns the first existing path from a list of candidates.
+ * Inputs: candidates - ordered list of paths to test.
+ * Outputs: The first existing path, or the first candidate if none exist.
+ */
+std::string resolveFirstExistingPath(const std::vector<std::string> &candidates);
+
 /* What it does: Parses a hero class token from text.
  * Inputs: text - token to parse.
  * Outputs: Parsed hero class enum.

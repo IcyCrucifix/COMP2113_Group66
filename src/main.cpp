@@ -14,12 +14,14 @@ int main()
 {
     try
     {
-        const std::string basePath = ".";
-        const std::vector<CardDefinition> cards = loadCardDefinitions(basePath + "/data/cards.txt");
-        const std::vector<HeroTemplate> heroes = loadHeroTemplates(basePath + "/data/heroes.txt");
-        const std::vector<BossTemplate> bosses = loadBossTemplates(basePath + "/data/bosses.txt");
-        const std::string savePath = basePath + "/savegame.txt";
+        const std::string cardsPath = utils::resolveFirstExistingPath({"./src/cards/cards.txt", "./cards.txt"});
+        const std::string heroesPath = utils::resolveFirstExistingPath({"./src/hero/heroes.txt", "./heroes.txt"});
+        const std::string bossesPath = utils::resolveFirstExistingPath({"./src/bosses/bosses.txt", "./bosses.txt"});
+        const std::string savePath = "./savegame.txt";
 
+        const std::vector<CardDefinition> cards = loadCardDefinitions(cardsPath);
+        const std::vector<HeroTemplate> heroes = loadHeroTemplates(heroesPath);
+        const std::vector<BossTemplate> bosses = loadBossTemplates(bossesPath);
         Battle battle(cards, heroes, bosses, savePath);
 
         utils::clearScreen();

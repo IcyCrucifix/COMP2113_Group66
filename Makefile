@@ -1,23 +1,32 @@
 CXX := clang++
 CXXFLAGS := -std=c++17 -Wall -Wextra -pedantic -O2
 
-OBJS := main.o hero.o card.o deck.o battle.o buff.o save_load.o utils.o
+SRC_DIR := src
+OBJ_DIR := build
+TARGET := slay_text
 
-all: slay_text
+INCLUDES := -I$(SRC_DIR)/battle -I$(SRC_DIR)/bosses -I$(SRC_DIR)/buff -I$(SRC_DIR)/cards -I$(SRC_DIR)/deck -I$(SRC_DIR)/hero -I$(SRC_DIR)/save_load -I$(SRC_DIR)/utils
+SOURCES := \
+	$(SRC_DIR)/main.cpp \
+	$(SRC_DIR)/hero/hero.cpp \
+	$(SRC_DIR)/cards/card.cpp \
+	$(SRC_DIR)/deck/deck.cpp \
+	$(SRC_DIR)/battle/battle.cpp \
+	$(SRC_DIR)/buff/buff.cpp \
+	$(SRC_DIR)/save_load/save_load.cpp \
+	$(SRC_DIR)/utils/utils.cpp
+OBJS := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
 
-slay_text: $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+all: $(TARGET)
 
-main.o: main.cpp battle.h save_load.h utils.h
-hero.o: hero.cpp hero.h buff.h
-card.o: card.cpp card.h hero.h deck.h
-deck.o: deck.cpp deck.h utils.h
-battle.o: battle.cpp battle.h utils.h
-buff.o: buff.cpp buff.h
-save_load.o: save_load.cpp save_load.h utils.h
-utils.o: utils.cpp utils.h
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(OBJS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) slay_text
+	rm -rf $(OBJ_DIR) $(TARGET)
 
 .PHONY: all clean

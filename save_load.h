@@ -23,7 +23,6 @@ struct SaveGameData
     int currentBossRoundsStarted = 0;
     int currentRound = 1;
     int energy = 0;
-    int actionPoints = 0;
     int currentBattlePressure = 0;
     std::string plannedMoveName;
     int plannedMoveCategory = 0;

@@ -1,6 +1,6 @@
 # Slay Text: Text-based Roguelike Card Game
 
-> **COMP2113 Group Project** • The University of Hong Kong <br>
+> **COMP2113 Group 66 Project** • The University of Hong Kong <br>
 > A terminal turn-based deck-building card game inspired by *Slay the Spire*, built purely with standard C++17 STL.
 
 ## Game Description

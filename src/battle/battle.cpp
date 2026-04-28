@@ -104,7 +104,6 @@ bool Battle::setupFromSave(const SaveGameData &saveGame)
         deck_->restoreBattleState(restoreCardsById(saveGame.drawPile), restoreCardsById(saveGame.discardPile), restoreCardsById(saveGame.hand));
         currentRound_ = std::max(1, saveGame.currentRound);
         energy_ = saveGame.energy;
-        actionPoints_ = saveGame.actionPoints;
         currentBattlePressure_ = static_cast<BattlePressure>(saveGame.currentBattlePressure);
         currentPlannedMove_.name = saveGame.plannedMoveName;
         currentPlannedMove_.category = static_cast<CardCategory>(saveGame.plannedMoveCategory);
@@ -181,7 +180,6 @@ SaveGameData Battle::exportSave() const
         saveGame.currentBossRoundsStarted = boss_->roundsStarted();
         saveGame.currentRound = currentRound_;
         saveGame.energy = energy_;
-        saveGame.actionPoints = actionPoints_;
         saveGame.currentBattlePressure = static_cast<int>(currentBattlePressure_);
         saveGame.plannedMoveName = currentPlannedMove_.name;
         saveGame.plannedMoveCategory = static_cast<int>(currentPlannedMove_.category);
@@ -304,7 +302,6 @@ bool Battle::playSingleBattle()
 
             energy_ = hero_->energyCap() + hero_->statuses().nextTurnEnergyBonus;
             hero_->statuses().nextTurnEnergyBonus = 0;
-            actionPoints_ = 1;
             deck_->discardHand();
             deck_->drawCards(hero_->cardsPerRound(boss_->statuses()));
             hero_->statuses().nextTurnDrawPenalty = 0;
@@ -413,7 +410,7 @@ void Battle::playerTurn(const BossMove &plannedMove)
     while (hero_->isAlive() && boss_->isAlive())
     {
         renderBattleScreen(lastRoundCount_ + 1);
-        const int choice = utils::promptChoice("> ", 1, 4);
+        const int choice = utils::promptChoice("> ", 1, 3);
 
         if (choice == 1)
         {
@@ -455,41 +452,6 @@ void Battle::playerTurn(const BossMove &plannedMove)
             }
         }
         else if (choice == 2)
-        {
-            if (actionPoints_ <= 0)
-            {
-                pushLog("No action points remain this round.");
-                continue;
-            }
-
-            const int actionChoice = utils::promptChoice("Choose action point use: 1.Attack 2.Defend 3.Status : ", 1, 3);
-            const BasicAction action = static_cast<BasicAction>(actionChoice);
-            --actionPoints_;
-            lastHeroCategory_ = action == BasicAction::Attack ? CardCategory::Attack : (action == BasicAction::Defend ? CardCategory::Defense : CardCategory::Status);
-
-            if (action == BasicAction::Attack)
-            {
-                const int bonus = hero_->damageBonusPercent(boss_->belowThirtyPercent(), false);
-                const int outgoing = computeDamage(static_cast<int>(32 * heroValueScale()), DamageType::Physical, hero_->statuses(), boss_->statuses(), bonus);
-                const int finalDamage = mitigateDamage(outgoing, DamageType::Physical, boss_->statuses());
-                boss_->takeDamage(finalDamage);
-                hero_->noteDamageDealt(finalDamage);
-                pushLog("Basic Attack dealt " + std::to_string(finalDamage) + " damage.");
-            }
-            else if (action == BasicAction::Defend)
-            {
-                hero_->statuses().tempDamageReductionPercent = std::max(hero_->statuses().tempDamageReductionPercent, static_cast<int>(55 * heroValueScale()));
-                hero_->statuses().shield += static_cast<int>(10 * heroValueScale());
-                pushLog("Basic Defend raised a sturdy guard.");
-            }
-            else
-            {
-                hero_->statuses().power += 1;
-                hero_->heal(static_cast<int>(12 * heroValueScale()));
-                pushLog("Basic Status granted 1 Power and a small heal.");
-            }
-        }
-        else if (choice == 3)
         {
             pushLog("You ended the round.");
             break;
@@ -890,7 +852,7 @@ void Battle::renderBattleScreen(int roundNumber) const
     const std::string heroEnergy = "Energy:" + utils::bar(energy_, std::max(energy_, hero_->energyCap()), 15, kWarmAccent, kSoftBrown) + "  " + std::to_string(energy_) + "/" + std::to_string(hero_->energyCap());
     std::cout << utils::padVisible(heroEnergy, 34) << "  " << "Turn Order: Player First" << "\n";
 
-    std::cout << utils::padVisible("Action Points: " + std::to_string(actionPoints_) + " remaining", 34) << "  " << "Archetype: " << bossArchetypeName(boss_->profile().archetype) << "\n";
+    std::cout << utils::padVisible("Battle Type: Card Combat", 34) << "  " << "Archetype: " << bossArchetypeName(boss_->profile().archetype) << "\n";
     std::cout << utils::padVisible("Status: " + formatStatuses(hero_->statuses()), 34) << "  " << "Status: " << formatStatuses(boss_->statuses()) << "\n\n";
 
     std::cout << kPaleAccent << utils::repeat("-", 60) << kReset << "\n";
@@ -918,9 +880,8 @@ void Battle::renderBattleScreen(int roundNumber) const
     }
     std::cout << "\nChoose an action:\n";
     std::cout << "1. Play a card (choose a card number)\n";
-    std::cout << "2. Use an action point (Attack / Defend / Status)\n";
-    std::cout << "3. End this round\n";
-    std::cout << "4. Save and quit\n";
+    std::cout << "2. End this round\n";
+    std::cout << "3. Save and quit\n";
 }
 
 void Battle::pushLog(const std::string &message)

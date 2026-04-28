@@ -81,6 +81,7 @@ Each round against a boss strictly follows these 5 phases:
 
 - **Deck Cycle**: Auto-cycles from Draw Pile → Hand → Discard Pile.
 - **Turn Limit**: Must defeat each boss within **12 rounds**, otherwise the run fails.
+- **Victory Condition**: **Boss HP ≤ 0** triggers Game Victory.
 - **Defeat Condition**: **Hero HP ≤ 0** triggers Game Over.
 - **Reward System**: Faster victories = **more permanent buff choices**.
 

@@ -175,9 +175,7 @@ There are 23 kinds of cards in total, categorized into 4 types. Different types 
 - **Status**
   - There are 8 kinds of **Status Cards** in total. They apply 7 different statuses, which are explained in the Status Effects section below.
 - **Other**
-  - There are 2 kinds of **Other Card** in total:
     <br>**Tactical Mind**: Put one other card from your hand to the bottom of your deck, then draw 2 cards from the top.
-    <br>**Endure Hardship**: Gain 10 extra Energy next turn.
 
 ### Status Effects 
 

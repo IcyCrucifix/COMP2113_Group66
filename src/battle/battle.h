@@ -218,7 +218,6 @@ private:
     unsigned int seed_ = 0;
     int battleIndex_ = 0;
     int energy_ = 0;
-    int actionPoints_ = 0;
     int lastRoundCount_ = 0;
     int currentRound_ = 0;
     int targetBossCount_ = 3;

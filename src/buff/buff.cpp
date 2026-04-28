@@ -89,20 +89,6 @@ std::string bossArchetypeName(BossArchetype archetype)
     return "Unknown";
 }
 
-std::string basicActionName(BasicAction action)
-{
-    switch (action)
-    {
-    case BasicAction::Attack:
-        return "Attack";
-    case BasicAction::Defend:
-        return "Defend";
-    case BasicAction::Status:
-        return "Status";
-    }
-    return "Unknown";
-}
-
 std::vector<std::string> activeStatusTags(const StatusBlock &statuses)
 {
     std::vector<std::string> tags;

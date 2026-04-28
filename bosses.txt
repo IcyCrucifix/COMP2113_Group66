@@ -1,0 +1,12 @@
+# id|name|archetype|min_hp|max_hp|speed|behavior|special
+dark_demon|Dark Demon|Offensive|280|400|11|Prefers heavy physical attacks with occasional rage buffs.|Below 30% HP it gains 30% more damage and uses strong attacks more often.
+lord_of_blood|Lord of Blood|Offensive|300|390|12|Bleeds the player with relentless offense and punishes slow starts.|Below 30% HP it gains 30% more damage and chains attacks.
+starscourge_radahn|Starscourge Radahn|Offensive|320|400|10|Telegraphed but brutal attacks with high burst turns.|Below 30% HP it gains 30% more damage and charges meteor strikes.
+sanctuary_guardian|Sanctuary Guardian|Defensive|380|500|9|Alternates between defense stances, self-heals, and counter slams.|Heals every 3 rounds and becomes harder to crack below 30% HP.
+void_giant|Void Giant|Defensive|400|520|8|Reduces incoming damage and retaliates with crushing swings.|Heals every 3 rounds and gains stronger mitigation below 30% HP.
+abyss_beast|Abyss Beast|Defensive|390|510|9|Uses guard stances and punishes careless aggression.|Heals every 3 rounds and gains stronger counterplay below 30% HP.
+chaos_witch|Chaos Witch|Magic|260|360|12|Stacks Burn, Poison, and Vulnerability instead of raw damage.|Heals when the player is covered in debuffs and escalates below 30% HP.
+queen_of_the_full_moon|Queen of the Full Moon|Magic|280|380|13|Shifts between curses, flames, and moonlight recovery.|Heals when the player is debuffed and empowers statuses below 30% HP.
+death_priest|Death Priest|Magic|270|370|11|Drains life while layering debuffs and pressure.|Heals when the player is debuffed and intensifies curses below 30% HP.
+unknown|Unknown|Hybrid|300|420|12|Adapts to your previous choice and shifts its plan every round.|Below 40% HP it changes phase and starts reducing your card draw.
+sir_of_all_knowing|Sir of All-knowing|Hybrid|320|440|13|Reads your style, then answers with the most disruptive move.|Below 40% HP it changes phase and starts reducing your card draw.

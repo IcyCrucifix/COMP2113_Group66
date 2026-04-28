@@ -1,0 +1,4 @@
+# id|name|class|max_hp|energy|speed|passive|playstyle
+shadowblade_strider|Shadowblade Strider|Offensive|200|5|14|Gain 1 Power if you deal at least 220 damage in a round; all Vulnerability you apply gains +1 stack; deal 3% more damage to enemies below 30% HP.|High-risk burst damage
+bulwark_knight|Bulwark Knight|Defensive|280|3|9|Gain 1 Block and 12 Shield at the start of each round; Defense cards cost 1 less; reflect 10% of damage taken.|Defensive counterattack
+wraithflame_sprite|Wraithflame Sprite|Magic|220|4|12|Magic damage +15%; Burn and Poison applications gain +1 stack; draw 1 extra card while the boss has at least 2 debuffs.|Damage-over-time specialist

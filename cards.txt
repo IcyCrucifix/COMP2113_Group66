@@ -1,0 +1,24 @@
+# id|name|cost|category|effect|damage_type|value1|value2|value3|description|notes
+light_strike|Light Strike|1|Attack|DIRECT_DAMAGE|Physical|40|0|0|Deal 40 physical damage|
+heavy_strike|Heavy Strike|2|Attack|DIRECT_DAMAGE|Physical|70|0|0|Deal 70 physical damage|
+magic_blast|Magic Blast|2|Attack|DIRECT_DAMAGE|Magic|80|0|0|Deal 80 magic damage|
+flame_blast|Flame Blast|3|Attack|DAMAGE_AND_BURN|Magic|20|3|0|Deal 20 magic damage and apply 3 Burn|Burn raises magic damage taken by 7% per stack
+frailty_strike|Frailty Strike|3|Attack|DAMAGE_AND_VULNERABILITY|Physical|40|2|0|Deal 40 physical damage and apply 2 Vulnerability|Vulnerability raises physical damage taken by 5% per stack
+overload_charge|Overload Charge|5|Attack|SELF_DAMAGE_THEN_DAMAGE|Physical|100|180|0|Deal 100 physical damage to yourself, then 180 physical damage to the enemy|
+lethal_blow|Lethal Blow|3|Attack|VULNERABILITY_BURST|Physical|50|50|0|Take double damage this round, deal 50 damage plus 50 more per enemy Vulnerability stack|
+revenge_strike|Revenge Strike|3|Attack|BLOCK_TO_DAMAGE|Physical|20|0|0|Consume all Block, then deal 20 physical damage per Block stack|
+defend|Defend|1|Defense|GUARD_ALL|Pure|70|0|0|Reduce damage taken by 70% this round|
+iron_shield|Iron Shield|2|Defense|GUARD_PHYSICAL_AND_BLOCK|Pure|80|2|0|Reduce physical damage taken by 80% and gain 2 Block|
+magic_shield|Magic Shield|2|Defense|GUARD_MAGIC_AND_BLOCK|Pure|90|3|0|Reduce magic damage taken by 90% and gain 3 Block|
+opportunism|Opportunism|2|Defense|STATUS_COUNTER_GUARD|Pure|60|70|0|Reduce damage taken by 60%; if the boss uses a Status move this round, deal 70 damage back|
+thorn_armor|Thorn Armor|3|Defense|THORN_GUARD|Pure|50|0|0|Reduce damage taken by 50%; if the boss attacks, it takes double the damage you suffer|
+green_ecology|Green Ecology|5|Status|GAIN_ENERGY_SAVING|Pure|1|0|0|Gain 1 Energy Saving|Energy Saving reduces all card costs by 1
+power_blessing|Power Blessing|2|Status|GAIN_POWER|Pure|3|0|0|Gain 3 Power|Power increases damage dealt by 20% per stack
+metamorphosis|Metamorphosis|3|Status|BLOCK_TO_POWER|Pure|0|0|0|Consume all Block and convert it into the same number of Power stacks|
+toxic_storm|Toxic Storm|2|Status|APPLY_POISON|Pure|4|0|0|Apply 4 Poison to the enemy|Poison deals 12 damage per stack at end of round
+crush_defense|Crush Defense|2|Status|APPLY_VULNERABILITY|Pure|3|0|0|Apply 3 Vulnerability to the enemy|
+inferno_blaze|Inferno Blaze|3|Status|SELF_RISK_BURN|Pure|100|10|0|Take 100% extra damage this round and apply 10 Burn to the enemy|
+first_aid|First Aid|1|Status|HEAL|Pure|40|0|0|Heal 40 HP|
+quick_wit|Quick Wit|2|Status|CONDITIONAL_HEAL|Pure|50|70|0|Heal 50 HP; if the boss uses a Defense move this round, heal 70 more|
+tactical_mind|Tactical Mind|1|Other|FILTER_DRAW|Pure|2|0|0|Send the highest-cost card in your hand to the bottom of the deck, then draw 2 cards|
+endure_hardship|Endure Hardship|8|Other|NEXT_TURN_ENERGY|Pure|10|0|0|Gain 10 extra Energy next turn|

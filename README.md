@@ -185,17 +185,17 @@ There are 23 kinds of cards in total, categorized into 4 types. Different types 
 - **Attack**
   - There are 8 kinds of **Attack Card** in total. Effects include deal damage, apply **Vulnerability** or **Burn**, burst damage, self-recoil effects.
   - **Sample Card**:
-    <br>**Heavy Strike**: Deal 70 physical damage.
-    <br>**Magic Blast**: Deal 80 magic damage.
+    - **Heavy Strike**: Deal 70 physical damage.
+    - **Magic Blast**: Deal 80 magic damage.
 - **Defense**
   - There are 5 kinds of **Defense Card** in total. Effects include damage reduction, apply **Block** and conditional counterattacks. 
   - **Sample Card**
-    <br>**Iron Shield**: Reduce physical damage taken by 80%, gain 2 **Block**.
-    <br>**Thorn Armor**: Reduce damage taken by 50%, if the enemy uses an **Attack Card**, the enemy takes double the damage you receive.
+    - **Iron Shield**: Reduce physical damage taken by 80%, gain 2 **Block**.
+    - **Thorn Armor**: Reduce damage taken by 50%, if the enemy uses an **Attack Card**, the enemy takes double the damage you receive.
 - **Status**
   - There are 8 kinds of **Status Cards** in total. They apply 7 different statuses, which are explained in the Status Effects section below.
 - **Other**
-    <br>**Tactical Mind**: Put one other card from your hand to the bottom of your deck, then draw 2 cards from the top.
+    - **Tactical Mind**: Put one other card from your hand to the bottom of your deck, then draw 2 cards from the top.
 
 ### Status Effects 
 

@@ -205,11 +205,6 @@ During the battle, various status effects can be inflicted on both the player an
 |   Magic   | Chaos Witch; <br>Queen of the Full Moon; <br>Death Priest | 260-380  | Applies Burn, Poison, Vulnerability instead of direct damage | Heals if player has debuffs; <br>stronger debuffs below 30% HP |
 |  Hybrid   |              Unknown; <br>Sir of All-knowing              | 300-440  | Adapts to player actions dynamically                         | Phase change below 40% HP; reduces player draw               |
 
-### Difficulty System
-
-- **Easy**: Lower boss HP/attack, full boss intent visible
-- **Normal**: Standard stats, partial boss intent visible
-- **Hard**: Higher boss HP/attack, hidden intent, multi-phase mechanics
 
 ### Save / Load System
 

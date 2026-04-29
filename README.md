@@ -281,7 +281,7 @@ Thank you for taking the time to explore our project! This game was independentl
 ### Team Members and Contributions
 
 
-*Clarification: Team member [Wang Huanyu](https://github.com/eEthY) commited changes of renaming the paths of ample files, causing the accumulation of additions and deletions extremely high. The original contribution of Wang is approximately 500 lines of addition and deletion in total.*
+*Clarification: Team member [Wang Huanyu](https://github.com/eEthY) commited changes of renaming the paths of ample files, causing the accumulation of additions and deletions extremely high. The original contribution of Wang is approximately 700 lines of addition and deletion in total.*
 
 *We apologize for any inconvenience that might occur duing calculation of the percentage of contributions of each member. Thank you.*
 

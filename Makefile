@@ -1,4 +1,4 @@
-CXX := clang++
+CXX := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -pedantic -O2
 
 SRC_DIR := src

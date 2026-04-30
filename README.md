@@ -67,25 +67,45 @@ graph LR
     class C boss;
     class E death;
 ```
+
+
 ### Game Rules
 
 #### Round Flow
 
-Each round against a boss strictly follows these 5 phases:
+Each round against a boss strictly follows these **5 phases**:
 
-1. **Reset Energy** —— *Energy is fully refilled at the start*
-2. **Draw Cards** —— The game automatically draws **4 cards** into your hand at the start of **every round**.
-3. **Play Cards** —— You may play as many cards as you have Energy for. Each card has an Energy cost, and you can play multiple cards in a single turn.
-4. **Boss Acts** —— The Boss performs exactly one action per round (it may attack, defend, apply status effects, heal, or use special abilities).
-5. **Status Effects Resolve** —— At the end of the round, all ongoing effects such as Poison (damage over time) and Burn (increased magic damage taken) are calculated and applied.
+1. **Reset Energy**  
+   Energy is fully refilled to the hero’s maximum at the start of **every round**.
+
+2. **Draw Cards**  
+   The game automatically draws **4 cards** into your hand at the start of every round.
+
+3. **Play Cards**  
+   You may play as many cards as you have Energy for. Each card has an Energy cost, and you can play multiple cards in a single turn.
+
+4. **Boss Acts**  
+   The Boss performs exactly one action per round (it may attack, defend, apply status effects, heal, or use special abilities).
+
+5. **Status Effects Resolve**  
+   At the end of the round, all ongoing effects — such as **Poison** and **Burn** — are calculated and applied.
 
 #### Key Mechanics
 
-- **Deck Cycle**: Auto-cycles from Draw Pile → Hand → Discard Pile.
-- **Turn Limit**: Must defeat each boss within **`12` rounds**, otherwise the run fails.
-- **Victory Condition**: **Boss HP ≤ `0`** triggers Game Victory.
-- **Defeat Condition**: **Hero HP ≤ `0`** triggers Game Over.
-- **Reward System**: Faster victories = **more permanent buff choices**.
+1. **Deck Cycle**  
+   Cards automatically cycle from Draw Pile → Hand → Discard Pile.
+
+2. **Turn Limit**  
+   You must defeat each boss within **12 rounds**, otherwise the run fails.
+
+3. **Victory Condition**  
+   **Boss HP ≤ `0`** triggers Game Victory.
+
+4. **Defeat Condition**  
+   **Hero HP ≤ `0`** triggers Game Over.
+
+5. **Reward System**  
+   Faster victories = **more permanent buff choices**.
 
 ----
 
@@ -285,7 +305,7 @@ Thank you for taking the time to explore our project! This game was independentl
 
 *We apologize for any inconvenience that might occur duing calculation of the percentage of contributions of each member. Thank you.*
 
-- **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for overall game structure, boss and hero design, testing and partially coding.
+- **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for overall game structure, boss and hero design, modification and supplement for README, testing and partially coding.
 - **[Fu Yitong](https://github.com/Lena070112)**: Responsible for 
 - **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for README writing, testing and partially coding.
 - **[Wang Huanyu](https://github.com/eEthY)**: Responsible for 

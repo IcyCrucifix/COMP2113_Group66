@@ -88,7 +88,7 @@ Each round against a boss strictly follows these **5 phases**:
    The Boss performs exactly one action per round, which may include attacking, defending, applying status effects, healing, or using special abilities.
 
 6. **Status Effects Resolve**  
-   At the end of the round, all ongoing effects — such as [Poison](https://github.com/IcyCrucifix/COMP2113_Group66/edit/main/README.md#status-effects) and [Burn](https://github.com/IcyCrucifix/COMP2113_Group66/edit/main/README.md#status-effects) — are calculated and applied.
+   At the end of the round, all ongoing effects — such as [Poison](#status-effects) and [Burn](#status-effects) — are calculated and applied.
 
 #### Key Mechanics
 

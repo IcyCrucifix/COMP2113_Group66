@@ -74,10 +74,10 @@ graph LR
 Each round against a boss strictly follows these 5 phases:
 
 1. **Reset Energy** —— *Energy is fully refilled at the start*
-2. **Draw Cards**
-3. **Play Cards**
-4. **Boss Acts**
-5. **Status Effects Resolve**
+2. **Draw Cards** —— The game automatically draws **4 cards** into your hand at the start of **every round**.
+3. **Play Cards** —— You may play as many cards as you have Energy for. Each card has an Energy cost, and you can play multiple cards in a single turn.
+4. **Boss Acts** —— The Boss performs exactly one action per round (it may attack, defend, apply status effects, heal, or use special abilities).
+5. **Status Effects Resolve** —— At the end of the round, all ongoing effects such as Poison (damage over time) and Burn (increased magic damage taken) are calculated and applied.
 
 #### Key Mechanics
 

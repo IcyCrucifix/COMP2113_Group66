@@ -82,7 +82,7 @@ Each round against a boss strictly follows these **5 phases**:
    The game automatically draws **4 cards** into your hand at the start of every round.
 
 3. **Play Cards**  
-   You may play as many cards as you have Energy for. Each card has an Energy cost, and you can play multiple cards in a single turn.
+   Each card has a fixed **Energy Cost**. Players may play any number of cards per turn, provided they have enough remaining energy.
 
 4. **Boss Acts**  
    The Boss performs exactly one action per round (it may attack, defend, apply status effects, heal, or use special abilities).
@@ -305,7 +305,7 @@ Thank you for taking the time to explore our project! This game was independentl
 
 *We apologize for any inconvenience that might occur duing calculation of the percentage of contributions of each member. Thank you.*
 
-- **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for overall game structure, boss and hero design, modification and supplement for README, testing and partially coding.
+- **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for boss and hero design, modification and supplement for README, testing and partially coding.
 - **[Fu Yitong](https://github.com/Lena070112)**: Responsible for 
 - **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for README writing, testing and partially coding.
 - **[Wang Huanyu](https://github.com/eEthY)**: Responsible for 

@@ -52,6 +52,7 @@ void Battle::setupNewRun(Difficulty difficulty, const std::string &heroId, unsig
     battleIndex_ = 0;
     lastRoundCount_ = 0;
     lastHeroCategory_ = CardCategory::Other;
+    lastDefeatSummary_.clear();
     battleLog_.clear();
     buildBossSequence();
 }
@@ -87,6 +88,7 @@ bool Battle::setupFromSave(const SaveGameData &saveGame)
     hero_->setCurrentHp(saveGame.currentHp);
     battleLog_.clear();
     lastHeroCategory_ = CardCategory::Other;
+    lastDefeatSummary_.clear();
 
     if (saveGame.battleInProgress && !saveGame.currentBossId.empty())
     {
@@ -208,6 +210,11 @@ SaveGameData Battle::exportSave() const
 bool Battle::didPlayerQuit() const
 {
     return playerQuit_;
+}
+
+const std::string &Battle::lastDefeatSummary() const
+{
+    return lastDefeatSummary_;
 }
 
 const HeroTemplate *Battle::findHeroTemplate(const std::string &heroId) const
@@ -333,6 +340,7 @@ bool Battle::playSingleBattle()
     if (round > 12 && boss_->isAlive())
     {
         pushLog("The 12-round limit expired. The boss wins the battle.");
+        lastDefeatSummary_ = boss_->profile().name + " survived all 12 rounds and won when the battle timer expired.";
     }
 
     lastRoundCount_ = std::min(round, 12);
@@ -497,6 +505,10 @@ void Battle::bossTurn(const BossMove &move)
         const int finalDamage = mitigateDamage(outgoing, move.damageType, hero_->statuses());
         hero_->takeDamage(finalDamage);
         pushLog("You suffered " + std::to_string(finalDamage) + " damage.");
+        if (!hero_->isAlive())
+        {
+            lastDefeatSummary_ = buildBossFinisherSummary(move, finalDamage);
+        }
 
         if (hero_->statuses().thornArmorReady && move.category == CardCategory::Attack)
         {
@@ -555,6 +567,11 @@ void Battle::bossTurn(const BossMove &move)
         boss_->takeDamage(70);
         hero_->noteDamageDealt(70);
         pushLog("Opportunism punished the boss for using a status move.");
+    }
+
+    if (!hero_->isAlive() && lastDefeatSummary_.empty())
+    {
+        lastDefeatSummary_ = buildBossFinisherSummary(move, 0);
     }
 }
 
@@ -901,4 +918,57 @@ std::string Battle::formatStatuses(const StatusBlock &statuses) const
         return "None";
     }
     return utils::join(tags, " ");
+}
+
+std::string Battle::buildBossFinisherSummary(const BossMove &move, int damageDealt) const
+{
+    std::vector<std::string> effects;
+    if (damageDealt > 0)
+    {
+        effects.push_back("dealt " + std::to_string(damageDealt) + " damage");
+    }
+    if (move.burn > 0)
+    {
+        effects.push_back("inflicted Burn");
+    }
+    if (move.poison > 0)
+    {
+        effects.push_back("inflicted Poison");
+    }
+    if (move.vulnerability > 0)
+    {
+        effects.push_back("inflicted Vulnerability");
+    }
+    if (move.drawPenalty > 0)
+    {
+        effects.push_back("reduced your next draw");
+    }
+    if (move.heal > 0)
+    {
+        effects.push_back("restored its own health");
+    }
+    if (move.shield > 0)
+    {
+        effects.push_back("gained Shield");
+    }
+    if (move.power > 0)
+    {
+        effects.push_back("gained Power");
+    }
+
+    std::string summary = boss_->profile().name + " finished you with [" + move.name + "]";
+    if (!effects.empty())
+    {
+        summary += " and " + utils::join(effects, ", ") + ".";
+    }
+    else
+    {
+        summary += ".";
+    }
+
+    if (!move.flavor.empty())
+    {
+        summary += " " + move.flavor;
+    }
+    return summary;
 }

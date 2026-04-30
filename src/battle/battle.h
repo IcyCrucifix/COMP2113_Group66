@@ -74,6 +74,12 @@ public:
      */
     bool didPlayerQuit() const;
 
+    /* What it does: Returns a short summary of how the player was defeated, if available.
+     * Inputs: None.
+     * Outputs: Defeat summary string.
+     */
+    const std::string &lastDefeatSummary() const;
+
 private:
     /* What it does: Finds a hero template by id.
      * Inputs: heroId - template identifier.
@@ -207,6 +213,12 @@ private:
      */
     std::string formatStatuses(const StatusBlock &statuses) const;
 
+    /* What it does: Builds a readable summary for the boss move that ended the battle.
+     * Inputs: move - boss move that was used; damageDealt - final damage that hit the player.
+     * Outputs: Summary sentence describing the finishing move.
+     */
+    std::string buildBossFinisherSummary(const BossMove &move, int damageDealt) const;
+
     std::vector<CardDefinition> cards_;
     std::vector<HeroTemplate> heroes_;
     std::vector<BossTemplate> bosses_;
@@ -228,5 +240,6 @@ private:
     bool battleStateLoaded_ = false;
     std::vector<std::string> bossSequence_;
     std::vector<std::string> battleLog_;
+    std::string lastDefeatSummary_;
     std::string savePath_;
 };

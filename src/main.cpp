@@ -46,6 +46,10 @@ int main()
                 }
                 else
                 {
+                    if (!victory && !battle.lastDefeatSummary().empty())
+                    {
+                        std::cout << "\n" << battle.lastDefeatSummary() << "\n";
+                    }
                     std::cout << (victory ? "\nYou cleared the campaign!\n" : "\nYou were defeated.\n");
                 }
                 return 0;
@@ -86,6 +90,10 @@ int main()
         }
         else
         {
+            if (!victory && !battle.lastDefeatSummary().empty())
+            {
+                std::cout << "\n" << battle.lastDefeatSummary() << "\n";
+            }
             std::cout << (victory ? "\nYou cleared the run!\n" : "\nYou were defeated.\n");
         }
     }

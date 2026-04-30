@@ -287,7 +287,7 @@ Thank you for taking the time to explore our project! This game was independentl
 
 - **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for 
 - **[Fu Yitong](https://github.com/Lena070112)**: Responsible for 
-- **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for Responsible for README writing, testing and partially coding.
+- **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for README writing, testing and partially coding.
 - **[Wang Huanyu](https://github.com/eEthY)**: Responsible for 
 - **[Xu Jingfeng](https://github.com/IcyCrucifix)**: Responsible for the majority of coding.
 - **[Zhang Yikun](https://github.com/pzdmmsd)**: Responsible for README writing, testing and partially coding.

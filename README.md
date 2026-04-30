@@ -285,7 +285,7 @@ Thank you for taking the time to explore our project! This game was independentl
 
 *We apologize for any inconvenience that might occur duing calculation of the percentage of contributions of each member. Thank you.*
 
-- **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for boss and hero design, testing and partially coding.
+- **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for overall game structure, boss and hero design, testing and partially coding.
 - **[Fu Yitong](https://github.com/Lena070112)**: Responsible for 
 - **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for README writing, testing and partially coding.
 - **[Wang Huanyu](https://github.com/eEthY)**: Responsible for 

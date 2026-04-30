@@ -96,12 +96,12 @@ Here is how our project implements the required coding elements to support the c
 ### 1. Generation of Random Events
 
 - **Supported Features:** Randomized card drawing, randomized boss selection and sequence, fluctuating boss HP limits, and buff reward drops.
-- **Implementation:** We utilize the `<random>` library, specifically `std::mt19937` with a seed based on the current system time (`std::time(nullptr)`) in `main.cpp`, to ensure unpredictable and dynamic gameplay per run.
+- **Implementation:** We utilize the `<random>` library, specifically `std::mt19937` with a seed based on the current system time (`std::time(nullptr)`) in `main.cpp`, to ensure unpredictable and dynamic gameplay per run. [Example](https://github.com/IcyCrucifix/COMP2113_Group66/blob/main/src/main.cpp)
 
 ### 2. Data Structures for Storing Data
 
 - **Supported Features:** Managing Hero attributes, Card properties, Boss state, dynamically cycling Decks, Hand cards, and active Buffs.
-- **Implementation:** Extensively uses `std::vector` to hold collections of cards and templates. We implemented custom structs and classes (`Hero`, `Card`, `Boss`, `Deck`, `Battle`) to encapsulate game entity logic cleanly.
+- **Implementation:** Extensively uses `std::vector` to hold collections of cards and templates. We implemented custom structs and classes (`Hero`, `Card`, `Boss`, `Deck`, `Battle`) to encapsulate game entity logic cleanly. [Example: hero.h](https://github.com/IcyCrucifix/COMP2113_Group66/blob/main/src/hero/hero.h), [Example: card.h](https://github.com/IcyCrucifix/COMP2113_Group66/blob/main/src/cards/card.h)
 
 ### 3. Dynamic Memory Management
 
@@ -111,7 +111,7 @@ Here is how our project implements the required coding elements to support the c
 ### 4. File Input / Output
 
 - **Supported Features:** Loading static game data (Cards, Heroes, Bosses) from text files and implementing a robust Save/Load system for campaign progress.
-- **Implementation:** Uses `<fstream>` (`std::ifstream`, `std::ofstream`) to parse `cards.txt`, `heroes.txt`, and `bosses.txt` dynamically at launch, and to write/read `savegame.txt` when users save or load their progress.
+- **Implementation:** Uses `<fstream>` (`std::ifstream`, `std::ofstream`) to parse `cards.txt`, `heroes.txt`, and `bosses.txt` dynamically at launch, and to write/read `savegame.txt` when users save or load their progress. [Example](https://github.com/IcyCrucifix/COMP2113_Group66/blob/main/src/save_load/save_load.cpp)
 
 ### 5. Program Codes in Multiple Files
 
@@ -146,7 +146,7 @@ Here is how our project implements the required coding elements to support the c
             - Scorch Pulse: after the boss acts, the player gains `+2` **Burn**;
             - Toxic Pulse: after the boss acts, the player gains `+2` **Poison**.
 - **Implementation:** Applied via a global en56um in `main.cpp` that modifies boss HP scaling, attack power, boss intent visibility (UI), and triggers multi-phase mechanics on Hard.
-- **Supported Features:** Roguelike Buff System.
+- **Supported Features:** Roguelike Buff System. [Example](https://github.com/IcyCrucifix/COMP2113_Group66/blob/main/src/buff/buff.h)
     - If the player decides to play multiple rounds, the player chooses **one permanent buff** from a random reward selection after each boss victory. These buffs are run-persistent upgrades and are the main roguelike progression layer.
     - **Permanent buff list**
         - **Mighty Strikes**: `+20%` to all damage dealt.

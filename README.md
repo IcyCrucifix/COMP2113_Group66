@@ -183,7 +183,7 @@ Users can choose their hero before each encounter. There are 3 heroes to choose 
 
 ### Card System 
 
-There are 23 kinds of cards in total, categorized into 4 types. Different types are related to different playing styles and actions.
+There are 23 kinds of cards in total, categorized into 4 types. Different types are related to different playing styles and actions. [Details](https://github.com/IcyCrucifix/COMP2113_Group66/blob/main/src/cards/card.txt)
 
 - **Attack**
   - There are 8 kinds of **Attack Card** in total. Effects include deal damage, apply **Vulnerability** or **Burn**, burst damage, self-recoil effects.

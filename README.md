@@ -58,7 +58,7 @@ graph LR
     D -->|Round Count > 12| E
     D -->|Boss HP ≤ 0| F[Get Buffs]
     
-    F -->|Next Boss| C
+    F -->|if Multiboss| C
     
     classDef default fill:#ffffff,stroke:#333333,color:#000000,stroke-width:2px;
     classDef boss fill:#fff0f0,stroke:#d32f2f,color:#000000,stroke-width:2px;

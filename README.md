@@ -308,6 +308,6 @@ Thank you for taking the time to explore our project! This game was independentl
 - **[Chen Zhiyu](https://github.com/francescachen777-web)**: Responsible for boss and hero design, modification and supplement for README, testing and partially coding.
 - **[Fu Yitong](https://github.com/Lena070112)**: Responsible for 
 - **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for README writing, testing and partially coding.
-- **[Wang Huanyu](https://github.com/eEthY)**: Responsible for 
+- **[Wang Huanyu](https://github.com/eEthY)**: Responsible for whole game mechanism and card design and partially coding.
 - **[Xu Jingfeng](https://github.com/IcyCrucifix)**: Responsible for the majority of coding.
 - **[Zhang Yikun](https://github.com/pzdmmsd)**: Responsible for README writing, testing and partially coding.

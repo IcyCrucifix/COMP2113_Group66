@@ -12,7 +12,7 @@ Players are able to choose whether they play single or multiple rounds. After ea
 
 ## Demo Video (Bilibili)
 
-[![Bilibili Video](https://github-readme-bilibili-card.vercel.app/video/BV1V89dBUEgm)](https://www.bilibili.com/video/BV1V89dBUEgm/)
+[![Bilibili Video](Cover.png)](https://www.bilibili.com/video/BV1V89dBUEgm/)
 
 ---
 

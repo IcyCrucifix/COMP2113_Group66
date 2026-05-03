@@ -10,6 +10,12 @@ Players are able to choose whether they play single or multiple rounds. After ea
 
 ---
 
+## Demo Video (Bilibili)
+
+[![Bilibili Video](https://github-readme-bilibili-card.vercel.app/video/BV1V89dBUEgm)](https://www.bilibili.com/video/BV1V89dBUEgm/)
+
+---
+
 ## How to run
 
 You should have a C++ compiler (`clang++` or `g++`) installed on your device. The program is built using standard C++17 libraries (STL). No external installations or non-standard libraries are required for Linux/macOS/WSL.

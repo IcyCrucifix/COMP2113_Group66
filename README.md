@@ -10,9 +10,13 @@ Players are able to choose whether they play single or multiple rounds. After ea
 
 ---
 
-## Demo Video (Bilibili)
-
-[![Bilibili Video](Cover.png)](https://www.bilibili.com/video/BV1V89dBUEgm/)
+<div align="center">
+  <h3>Project Demo (Bilibili)</h3>
+  <a href="https://www.bilibili.com/video/BV1V89dBUEgm/" target="_blank">
+    <img src="Cover.png" width="500px" alt="Bilibili Video Demo">
+  </a>
+  <p>👆 Click the image above to watch on Bilibili.</p>
+</div>
 
 ---
 

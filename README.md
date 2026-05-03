@@ -310,4 +310,4 @@ Thank you for taking the time to explore our project! This game was independentl
 - **[Long Zeyan](https://github.com/Chris-LongZeyan)**: Responsible for README writing, testing and partially coding.
 - **[Wang Huanyu](https://github.com/eEthY)**: Responsible for whole game mechanism and card design and partially coding.
 - **[Xu Jingfeng](https://github.com/IcyCrucifix)**: Responsible for the majority of coding.
-- **[Zhang Yikun](https://github.com/pzdmmsd)**: Responsible for README writing, testing and partially coding.
+- **[Zhang Yikun](https://github.com/pzdmmsd)**: Responsible for README writing, testing, suggesting on some functions and partially coding.
